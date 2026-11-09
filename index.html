@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f8edf1"><title>Jerry Miffy Makeup AI Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header class="top"><div class="brand">JERRY MIFFY <span>MAKEUP AI STUDIO</span></div><div class="owner">PRIVATE ARTIST STUDIO</div></header>
+<main>
+<section class="hero"><p class="eyebrow">YOUR PROFESSIONAL AI MAKEUP ASSISTANT</p><h1>Beauty, thoughtfully<br><em>designed for every face.</em></h1><p>Analyze a client photo, create a tailored makeup plan, and explore signature looks.</p></section>
+<section class="panel">
+<div class="section-head"><div><p class="eyebrow">01 / CLIENT PHOTO</p><h2>Start a consultation</h2></div><span class="step">01</span></div>
+<div class="upload-grid">
+<label class="upload" for="photo"><span class="upload-icon">＋</span><strong>Choose client photo</strong><small>JPG, PNG, WEBP · automatically resized securely in your browser</small><input id="photo" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif"></label>
+<div class="preview-box"><img id="photoPreview" alt="Selected client photo preview" hidden><div id="emptyPreview">Your selected photo will appear here</div></div>
+</div>
+<div class="controls">
+<label>Consultation language<select id="language"><option value="Burmese">မြန်မာ</option><option value="English">English</option></select></label>
+<label>Occasion<select id="occasion"><option>Client consultation / General</option><option>Bridal</option><option>Engagement</option><option>Party</option><option>Daily</option><option>Evening</option></select></label>
+</div>
+<label class="notes-label">Artist notes (optional)<textarea id="notes" rows="2" placeholder="e.g. Client prefers soft makeup, dislikes heavy eyeliner..."></textarea></label>
+<button id="analyze" class="primary" disabled>Analyze &amp; create makeup plan <span>→</span></button>
+<p id="status" class="status" aria-live="polite">Choose a photo to begin. Photos are processed for this request and are not saved by this starter site.</p>
+</section>
+<section class="panel">
+<div class="section-head"><div><p class="eyebrow">02 / MAKEUP LOOK COLLECTION</p><h2>Choose a makeup direction</h2><p class="muted">25 curated professional looks · 3 signature styles + 22 additional looks</p></div><span class="step">02</span></div>
+<div class="look-legend"><span class="signature-dot"></span> Signature styles <span class="collection-count">25 LOOKS</span></div>
+<div id="styles" class="styles" aria-label="Choose one of 25 makeup looks"></div>
+<button id="preview" class="secondary" disabled>Generate selected makeup preview <span>✦</span></button>
+<p id="previewStatus" class="status preview-status" aria-live="polite" hidden></p>
+<p class="tiny">Preview uses an image-editing model and may have separate availability or charges. The AI is instructed to preserve the client's identity and facial structure, but exact preservation cannot be guaranteed.</p>
+</section>
+<section id="resultPanel" class="panel results" hidden>
+<div class="section-head"><div><p class="eyebrow">03 / ARTIST CONSULTATION</p><h2>Makeup plan</h2></div><button id="copy" class="small">Copy report</button></div>
+<div id="result" class="report"></div>
+</section>
+<section id="previewPanel" class="panel results" hidden><div class="section-head"><div><p class="eyebrow">04 / VISUAL PREVIEW</p><h2>Selected look</h2></div></div><div id="previewResult"></div></section>
+<footer>JERRY MIFFY MAKEUP AI STUDIO <span>Private professional workspace · Built for artist-led consultations</span></footer>
+</main><script type="module" src="/app.js"></script></body></html>
